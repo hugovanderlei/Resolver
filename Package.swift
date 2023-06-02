@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Resolver",
     platforms: [
-        .iOS(.v11),
+        .iOS(.v14),
         .macOS(.v10_14),
         .tvOS(.v13),
         .watchOS(.v6)
@@ -25,11 +25,13 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(
-            name: "Resolver",
-            dependencies: []),
-        .testTarget(
-            name: "ResolverTests",
-            dependencies: ["Resolver"]),
-    ]
+           .target(
+               name: "Resolver",
+               dependencies: [],
+               exclude: ["Info.plist"],
+               swiftSettings: [
+                   .unsafeFlags(["-target", "x86_64-apple-ios-simulator"]),
+               ]
+           )
+       ]
 )
