@@ -1,14 +1,14 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.7
 
 import PackageDescription
 
 let package = Package(
     name: "Resolver",
     platforms: [
-        .iOS(.v11),
-        .macOS(.v10_14),
+        .iOS(.v14),
+        .macOS(.v12),
         .tvOS(.v13),
-        .watchOS(.v6)
+        .watchOS(.v8)
     ],
     products: [
         .library(
